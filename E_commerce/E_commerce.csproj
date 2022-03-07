@@ -110,7 +110,7 @@
       <DependentUpon>StoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\BucketController.cs" />
-    <Compile Include="Controllers\BundlesController.cs" />
+    <Compile Include="Controllers\BundleController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Customer.cs">

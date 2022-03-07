@@ -7,14 +7,14 @@ using System.Web.Http;
 
 namespace E_commerce.Controllers
 {
-    public class BundlesController : ApiController
+    public class BundleController : ApiController
     {
         E_CommerceEntities e_CommerceEntities = new E_CommerceEntities();
-
-
-        public IEnumerable<bundle> GetAllBundles()
+        
+        public IEnumerable<bundle> GetAllProducts()
         {
             return e_CommerceEntities.bundles.ToList().AsEnumerable();
         }
+
     }
 }
