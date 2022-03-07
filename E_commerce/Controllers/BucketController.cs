@@ -9,12 +9,12 @@ namespace E_commerce.Controllers
 {
     public class BucketController : ApiController
     {
-        List<Product> BucketItems = new List<Product>();
+        List<Bundles> BucketItems = new List<Bundles>();
         public IHttpActionResult AddProductToBucket()
         {
-            Product p = new Product();
-            BucketItems = new List<Product>() {
-                new Product()
+            Bundles p = new Bundles();
+            BucketItems = new List<Bundles>() {
+                new Bundles()
                 {
                     Product_Name = p.Product_Name,
                     Price = p.Price

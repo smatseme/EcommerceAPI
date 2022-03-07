@@ -5,6 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="E_CommerceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="bundles">
+          <Key>
+            <PropertyRef Name="bundleID" />
+          </Key>
+          <Property Name="bundleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productId" Type="int" />
+          <Property Name="bundlePrice" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
         <EntityType Name="Catagory">
           <Key>
             <PropertyRef Name="CategoryID" />
@@ -46,6 +54,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="E_CommerceModelStoreContainer">
+          <EntitySet Name="bundles" EntityType="Self.bundles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Catagory" EntityType="Self.Catagory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
@@ -108,7 +117,16 @@
             <End Role="Catagory" EntitySet="Catagories" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
+          <EntitySet Name="bundles" EntityType="E_CommerceModel.bundle" />
         </EntityContainer>
+        <EntityType Name="bundle">
+          <Key>
+            <PropertyRef Name="bundleID" />
+          </Key>
+          <Property Name="bundleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productId" Type="Int32" />
+          <Property Name="bundlePrice" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -143,6 +161,15 @@
                 <ScalarProperty Name="Product_Desc" ColumnName="Product_Desc" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Category" ColumnName="Category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bundles">
+            <EntityTypeMapping TypeName="E_CommerceModel.bundle">
+              <MappingFragment StoreEntitySet="bundles">
+                <ScalarProperty Name="bundlePrice" ColumnName="bundlePrice" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="bundleID" ColumnName="bundleID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

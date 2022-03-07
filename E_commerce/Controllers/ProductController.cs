@@ -12,7 +12,7 @@ namespace E_commerce.Controllers
         E_CommerceEntities e_CommerceEntities = new E_CommerceEntities();
         
 
-        public IEnumerable<Product> GetAllProducts()
+        public IEnumerable<Bundles> GetAllProducts()
         {
             return e_CommerceEntities.Products.ToList().AsEnumerable();
         }

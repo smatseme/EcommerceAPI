@@ -9,6 +9,7 @@
         <EntityTypeShape EntityType="E_CommerceModel.Customer" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="E_CommerceModel.Product" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="E_CommerceModel.FK__Products__Catego__2C3393D0" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="E_CommerceModel.bundle" Width="1.5" PointX="3.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
